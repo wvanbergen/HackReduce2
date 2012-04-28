@@ -2,11 +2,13 @@ require 'rubygems'
 require 'mandy'
 
 
-Mandy.job "nasdaq_monthly_volume" do
+Mandy.job "nasdaq monthly volume" do
+  map_tasks 5
+  reduce_tasks 1
   
   map do |date, value|
     symbol, volume, diff = value.split('|',3)
-    emit("#{date[0, 7]}|VOLUME", volume)
+    emit("#{date[0, 7]}|VOLUME".to_sym, volume)
   end
   
   reduce do |month, volumes|
