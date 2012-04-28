@@ -2,28 +2,18 @@ require 'rubygems'
 require 'bundler/setup'
 
 require 'mandy'
-require 'json'
 require 'date'
 
 Mandy.job "Calculate daily difference" do
   
-  # {"exchange":"NASDAQ",
-  # "stock_symbol":"DELL",
-  # "date":"1997-08-26",
-  # "stock_price_open":83.87,
-  # "stock_price_high":84.75,
-  # "stock_price_low":82.50,
-  # "stock_price_close":82.81,
-  # "stock_volume":48736000,
-  # "stock_price_adj_close":10.35},
-  
+  # 0        1            2    3                4                5               6                 7            8
+  # exchange,stock_symbol,date,stock_price_open,stock_price_high,stock_price_low,stock_price_close,stock_volume,stock_price_adj_close
+  # NASDAQ,DELL,1997-08-26,83.87,84.75,82.50,82.81,48736000,10.35
   map do |line|
-    begin
-      values = JSON.parse(line[0 .. -2])
-      change = values['stock_price_close'] - values['stock_price_open']
-      emit(values['stock_symbol'], values['date'], values['stock_volume'].to_s, change.to_s)    
-    rescue JSON::ParserError => e
-      # noop
+    values = line.split(',')
+    if values.length == 9
+      change = values[6].to_f - values[3].to_f
+      emit(values[1], values[2], values[7], change.to_s)
     end
   end
 end

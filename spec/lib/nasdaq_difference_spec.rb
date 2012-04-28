@@ -10,7 +10,7 @@ describe 'nasdaq difference mapper' do
   end
     
   it "should be map a normal line properly" do
-    line = '{"exchange":"NASDAQ","stock_symbol":"DELL","date":"1997-08-26","stock_price_open":83.87,"stock_price_high":84.75,"stock_price_low":82.50,"stock_price_close":82.81,"stock_volume":48736000,"stock_price_adj_close":10.35},'
+    line = 'NASDAQ,DELL,1997-08-26,83.87,84.75,82.50,82.81,48736000,10.35'
     @runner.map(line) do |mapper|
       mapper.should_receive(:emit).with("DELL", "1997-08-26", '48736000', '-1.06')
     end
