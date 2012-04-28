@@ -1,0 +1,2 @@
+id,message_id,message_type,read_time,recipient_id,recipient_mailbox,recipient_star_flag,review_flag,sender_id,sender_mailbox,sender_star_flag,sent_time,thread_id,parent_id
+
