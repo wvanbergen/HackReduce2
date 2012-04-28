@@ -12,7 +12,7 @@ describe 'nasdaq difference mapper' do
   it "should be map a normal line properly" do
     line = "NASDAQ,DELL,1997-08-26,83.87,84.75,82.50,82.81,48736000,10.35\n"
     @runner.map(line) do |mapper|
-      mapper.should_receive(:emit).with("DELL", "1997-08-26", '48736000', '-1.06')
+      mapper.should_receive(:emit).with("1997-08-26", ["DELL", '48736000', '-1.06'])
     end
   end
   

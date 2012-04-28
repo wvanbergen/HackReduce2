@@ -10,7 +10,7 @@ Mandy.job "Calculate daily difference" do
     values = line.chomp.split(',')
     if values.length == 9 && values[0] == 'NASDAQ'
       change = values[6].to_f - values[3].to_f
-      emit(values[1], values[2], values[7], change.to_s)
+      emit(values[2], [values[1], values[7], change.to_s])
     end
   end
 end

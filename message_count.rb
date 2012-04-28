@@ -2,8 +2,6 @@ require 'rubygems'
 require "mandy"
 
 Mandy.job "Msg Count" do
-  map_tasks 5
-  reduce_tasks 3
 
   map do |line|
     # 0 - id,
