@@ -22,6 +22,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  json
   mandy
   rspec
