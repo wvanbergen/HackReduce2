@@ -1,4 +1,7 @@
 source :rubygems
 
 gem 'mandy'
-gem 'rspec'
+
+group :test do
+  gem 'rspec'
+end
