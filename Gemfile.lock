@@ -1,0 +1,27 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    diff-lcs (1.1.3)
+    json (1.7.0)
+    json (1.7.0-java)
+    libxml-ruby (2.3.2)
+    mandy (0.5.28)
+      json
+      libxml-ruby
+    rspec (2.9.0)
+      rspec-core (~> 2.9.0)
+      rspec-expectations (~> 2.9.0)
+      rspec-mocks (~> 2.9.0)
+    rspec-core (2.9.0)
+    rspec-expectations (2.9.1)
+      diff-lcs (~> 1.1.3)
+    rspec-mocks (2.9.0)
+
+PLATFORMS
+  java
+  ruby
+
+DEPENDENCIES
+  json
+  mandy
+  rspec
