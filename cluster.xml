@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <property>
+    <name>fs.default.name</name>
+    <value>hdfs://cluster-2.hackreduce.org:9000</value>
+  </property>
+
+  <property>
+    <name>mapred.job.tracker</name> 
+    <value>cluster-2.hackreduce.org:9000</value> 
+  </property>
+
+  <property>
+    <name>hadoop.job.ugi</name>
+    <value>user,supergroup</value>
+  </property>
+</configuration>
