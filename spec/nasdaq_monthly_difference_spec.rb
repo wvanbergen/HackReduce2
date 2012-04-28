@@ -17,8 +17,8 @@ describe job_name do
   end
   
   it "should reduce properly" do
-    @runner.reduce("1997-08|DIFF" => ['1', '2', '3']) do |mapper|
-      mapper.should_receive(:emit).with("1997-08|DIFF", 6)
+    @runner.reduce("1997-08|DIFF" => ['1', '2', '3']) do |reducer|
+      reducer.should_receive(:emit).with("1997-08|DIFF", 6)
     end
   end  
 end
