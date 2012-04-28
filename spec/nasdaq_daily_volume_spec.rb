@@ -2,7 +2,7 @@ require 'spec_helper'
 
 require 'nasdaq_daily_volume'
 
-describe 'nasdaq difference' do
+describe 'nasdaq daily volume' do
   
   before(:all) do
     job_name = "Calculate daily volume"

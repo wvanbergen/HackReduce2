@@ -2,10 +2,10 @@ require 'spec_helper'
 
 require 'nasdaq_difference'
 
-describe 'nasdaq difference mapper' do
+describe 'nasdaq difference' do
   
   before(:all) do
-    job_name = "Calculate daily difference"
+    job_name = "Calculate difference"
     @runner = Mandy::TestRunner.new(job_name)
   end
     
