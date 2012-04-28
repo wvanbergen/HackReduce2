@@ -12,13 +12,13 @@ describe job_name do
   it "should map a normal line properly" do
     line = "1997-08-26\tDELL|30000|0.4"
     @runner.map(line) do |mapper|
-      mapper.should_receive(:emit).with("1997-08", 12000.0)
+      mapper.should_receive(:emit).with("1997-08|DIFF", 12000.0)
     end
   end
   
   it "should reduce properly" do
-    @runner.reduce("1997-08" => ['1', '2', '3']) do |mapper|
-      mapper.should_receive(:emit).with("1997-08", 6)
+    @runner.reduce("1997-08|DIFF" => ['1', '2', '3']) do |mapper|
+      mapper.should_receive(:emit).with("1997-08|DIFF", 6)
     end
   end  
 end
