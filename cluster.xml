@@ -3,7 +3,7 @@
 
   <property>
     <name>fs.default.name</name>
-    <value>hdfs://cluster-2.hackreduce.org:9000</value>
+    <value>hdfs://cluster-2.hackreduce.org</value>
   </property>
 
   <property>
