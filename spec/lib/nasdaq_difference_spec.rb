@@ -10,9 +10,16 @@ describe 'nasdaq difference mapper' do
   end
     
   it "should be map a normal line properly" do
-    line = 'NASDAQ,DELL,1997-08-26,83.87,84.75,82.50,82.81,48736000,10.35'
+    line = "NASDAQ,DELL,1997-08-26,83.87,84.75,82.50,82.81,48736000,10.35\n"
     @runner.map(line) do |mapper|
       mapper.should_receive(:emit).with("DELL", "1997-08-26", '48736000', '-1.06')
+    end
+  end
+  
+  it "should ignore the header line" do
+    line = "exchange,stock_symbol,date,stock_price_open,stock_price_high,stock_price_low,stock_price_close,stock_volume,stock_price_adj_close\n"
+    @runner.map(line) do |mapper|
+      mapper.should_not_receive(:emit)
     end
   end
   
@@ -21,6 +28,5 @@ describe 'nasdaq difference mapper' do
     @runner.map(line) do |mapper|
       mapper.should_not_receive(:emit)
     end
-    
   end
 end
