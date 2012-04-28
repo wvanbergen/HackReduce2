@@ -1,6 +1,5 @@
-require "rubygems"
+require 'rubygems'
 require "mandy"
-require "csv"
 
 Mandy.job "Msg Count" do
   map_tasks 5

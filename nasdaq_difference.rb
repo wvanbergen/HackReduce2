@@ -1,8 +1,5 @@
 require 'rubygems'
-require 'bundler/setup'
-
 require 'mandy'
-require 'date'
 
 Mandy.job "Calculate daily difference" do
   
