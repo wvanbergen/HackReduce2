@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'mandy'
-require 'ruby-debug'
 
 TYPES  = %w{MSGS VOLUME DIFF}
 
