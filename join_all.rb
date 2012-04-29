@@ -13,9 +13,9 @@ Mandy.job "Join all" do
   end
   
   reduce do |year_and_month, types_and_values|
-    types_and_values = Hash[*types_and_values.first.split('|')]
-    ordered = TYPES.map{ |type| types_and_values[type] }.compact
-    emit(year_and_month, ordered) # if ordered.size == 3
+    types_and_values = Hash[*types_and_values.join('|').first.split('|')]
+    ordered_values = TYPES.map{ |type| types_and_values[type] }.compact
+    emit(year_and_month, ordered_values)  if ordered_values.size == 3
   end
 end
 

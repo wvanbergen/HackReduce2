@@ -1,8 +1,8 @@
 require 'spec_helper'
+require 'nasdaq_monthly_volume'
 
 
-job_name = 'nasdaq_monthly_volume'
-require job_name
+job_name = 'nasdaq monthly volume'
 
 describe job_name do
   

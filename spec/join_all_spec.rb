@@ -24,13 +24,13 @@ describe "Join all" do
   end
 
   it "reducer should not emit when it receives less than 3 values" do 
-    @runner.reduce("1997-08" => 'MSGS|200|VOLUME|3000') do |reducer|
+    @runner.reduce("1997-08" => ['MSGS|200|VOLUME|3000']) do |reducer|
       reducer.should_receive(:emit).never
     end
   end
 
   it "reducer should emit when in the proper order " do 
-    @runner.reduce("1997-08" => 'DIFF|-10|MSGS|200|VOLUME|3000') do |reducer|
+    @runner.reduce("1997-08" => ['DIFF|-10|MSGS|200|VOLUME|3000']) do |reducer|
       reducer.should_receive(:emit).with("1997-08", %w{ 200 3000 -10 })
     end
   end
